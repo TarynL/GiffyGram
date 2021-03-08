@@ -12,12 +12,12 @@ export const getPosts = () => {
    
 }
 
-const loggedInUser = {
-	id: 1,
-	name: "Bryan",
-	email: "bryan@bn.com"
-}
+// const loggedInUser = {
+// 	id: 1,
+// 	name: "Taryn",
+// 	email: "taryn@coolchick.com"
+// }
 
-export const getLoggedInUser = () => {
-	return loggedInUser;
-}
+// export const getLoggedInUser = () => {
+// 	return loggedInUser;
+// }

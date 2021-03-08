@@ -8,30 +8,30 @@
   "posts": [
     {
       "id": 2,
-      "imageURL": "https://media.giphy.com/media/26xBI73gWquCBBCDe/giphy.gif",
-      "userId": 6,
-      "description": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
-      "timestamp": 1561695022812,
-      "title": "Enhanced global utilisation"
+      "imageURL": "https://media.giphy.com/media/11kgieHVYW53lC/giphy.gif",
+      "userId": 1,
+      "description": "Do you wanna?",
+      "timestamp": 1561695026756,
+      "title": "Pug Tilt"
     },
     {
-      "imageURL": "https://media.giphy.com/media/26xBI73gWquCBBCDe/giphy.gif",
+      "imageURL": "https://media.giphy.com/media/3oKIPsx2VAYAgEHC12/giphy.gif",
       "userId": 5,
-      "description": "This is my second post",
-      "timestamp": 1561695022812,
-      "title": "Looky there",
+      "description": "Bye Mama",
+      "timestamp": 1561695020976,
+      "title": "Pug wave",
       "id": 3
     },
     {
-        "imageURL": "https://media.giphy.com/media/26xBI73gWquCBBCDe/giphy.gif",
+        "imageURL": "https://media.giphy.com/media/RbBu3TmliWmoE/giphy.gif",
         "userId": 7,
-        "description": "This is my third post",
+        "description": "I love you, I love you, I love you.",
         "timestamp": 1561695022812,
-        "title": "Woot woot",
+        "title": "Pug love",
         "id": 3
       }
 
 
   ],
-  "messages": []
+  "messages": [] 
 }
