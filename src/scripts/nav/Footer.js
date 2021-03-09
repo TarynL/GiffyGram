@@ -10,6 +10,9 @@ export const Footer = () => {
                 </select>
                 <span id="postCount">0</span>
             </div>
+            <div>
+            <p >Taryn Lytle &copy; 2021 Cohort 47 <a href="http://nashvillesoftwareschool.com/">Nashville Software School</a></p>
+            </div>
         </footer>
     `
 }

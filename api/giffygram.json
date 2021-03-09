@@ -23,15 +23,29 @@
       "id": 3
     },
     {
-        "imageURL": "https://media.giphy.com/media/RbBu3TmliWmoE/giphy.gif",
-        "userId": 7,
-        "description": "I love you, I love you, I love you.",
-        "timestamp": 1561695022812,
-        "title": "Pug love",
-        "id": 3
-      }
-
-
+      "imageURL": "https://media.giphy.com/media/RbBu3TmliWmoE/giphy.gif",
+      "userId": 7,
+      "description": "I love you, I love you, I love you.",
+      "timestamp": 1561695022812,
+      "title": "Pug love",
+      "id": 3
+    },
+    {
+      "imageURL": "https://media.giphy.com/media/xUOxfbuK9qc61NGiaI/giphy.gif",
+      "userId": 8,
+      "description": "Pug plays music all day long.",
+      "timestamp": 1561695026756,
+      "title": "Piano Pug",
+      "id": 4
+    },
+    {
+      "imageURL": "https://media.giphy.com/media/dTJd5ygpxkzWo/giphy.gif",
+      "userId": 2,
+      "description": "Pug getting belly rubs.",
+      "timestamp": 1561695026756,
+      "title": "Belly Pug",
+      "id": 5
+    }
   ],
-  "messages": [] 
+  "messages": []
 }
