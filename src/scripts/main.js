@@ -1,6 +1,7 @@
 import {getUsers, getPosts} from "./data/DataManager.js"
 import {PostList} from "./feed/PostList.js"
 import {NavBar} from "./Nav/NavBar.js"
+import {Footer} from "./Nav/Footer.js"
 /**
  * Main logic module for what should happen on initial page load for Giffygram
  */
@@ -23,6 +24,11 @@ const showPostList = () => {
 	navElement.innerHTML = NavBar();
 }
 
+const showFooter = () => {
+    const footerElement = document.querySelector("footer");
+	footerElement.innerHTML = Footer();
+}
+
 /*
     This function performs one, specific task.
 
@@ -32,8 +38,24 @@ const showPostList = () => {
 const startGiffyGram = () => {
     showPostList();
     showNavBar();
+    showFooter();
     
 } ;
 // Are you defining the function here or invoking it?
 startGiffyGram();
 
+const applicationElement = document.querySelector(".giffygram");
+
+applicationElement.addEventListener("click", event => {
+	if (event.target.id === "logout"){
+		console.log("You clicked on logout")
+	}
+})
+
+applicationElement.addEventListener("change", event => {
+    if (event.target.id === "yearSelection") {
+      const yearAsNumber = parseInt(event.target.value)
+  
+      console.log(`User wants to see posts since ${yearAsNumber}`)
+    }
+  })

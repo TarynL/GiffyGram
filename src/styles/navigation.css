@@ -42,6 +42,7 @@
 
 .navigation__message > img {
     height: 2rem;
+
 }
 
 .notification__count{
@@ -66,5 +67,6 @@
 
 #directMessageIcon {
     cursor: pointer;
+    
 }
 
