@@ -5,6 +5,8 @@ export const Post = (postObject) => {
             <h2 class="post__title">${postObject.title}</h2>
         </header>
         <img class="post__image" src="${postObject.imageURL}" />
+        <h3 class="post_description"
+        <div><button id="Pug Hug--${postObject.id}">Pug Hug Here</button></div>
       </section>
     `
   }

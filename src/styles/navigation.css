@@ -5,7 +5,7 @@
     border-bottom: 1px solid lightblue;
     padding: 0.5em 0 0.5em 1em;
     margin-bottom: 2em;
-    position: fixed;
+    /* position: fixed; */
     z-index: 11;
     top: 0;
     width: 100%;
@@ -42,6 +42,7 @@
 
 .navigation__message > img {
     height: 2rem;
+
 }
 
 .notification__count{
@@ -66,5 +67,6 @@
 
 #directMessageIcon {
     cursor: pointer;
+    
 }
 
