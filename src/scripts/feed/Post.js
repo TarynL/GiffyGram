@@ -8,6 +8,7 @@ export const Post = (postObject) => {
         <h3 class="post_description"
         <div><button id="Pug Hug--${postObject.id}">Pug Hug Here</button></div>
         <button id="delete__${postObject.id}">Delete</button>
+        <button id="edit__${postObject.id}">Edit</button>
       </section>
     `
   }

@@ -13,12 +13,12 @@
   ],
   "posts": [
     {
-      "id": 2,
+      "title": "Pug Tilt Thrice",
       "imageURL": "https://media.giphy.com/media/11kgieHVYW53lC/giphy.gif",
-      "userId": 1,
       "description": "Do you wanna?",
+      "userId": 1,
       "timestamp": 1583861072000,
-      "title": "Pug Tilt"
+      "id": 2
     },
     {
       "imageURL": "https://media.giphy.com/media/dTJd5ygpxkzWo/giphy.gif",
