@@ -2,7 +2,13 @@
   "users": [
     {
       "name": "Taryn",
-      "email": "taryn@coolchick.org"
+      "email": "taryn@coolchick.org",
+      "id": 1
+    },
+    {
+      "name": "Gus",
+      "email": "gus@pugparty.edu",
+      "id": 2
     }
   ],
   "posts": [
@@ -11,40 +17,32 @@
       "imageURL": "https://media.giphy.com/media/11kgieHVYW53lC/giphy.gif",
       "userId": 1,
       "description": "Do you wanna?",
-      "timestamp": 1561695026756,
+      "timestamp": 1583861072000,
       "title": "Pug Tilt"
-    },
-    {
-      "imageURL": "https://media.giphy.com/media/3oKIPsx2VAYAgEHC12/giphy.gif",
-      "userId": 5,
-      "description": "Bye Mama",
-      "timestamp": 1561695020976,
-      "title": "Pug wave",
-      "id": 3
-    },
-    {
-      "imageURL": "https://media.giphy.com/media/RbBu3TmliWmoE/giphy.gif",
-      "userId": 7,
-      "description": "I love you, I love you, I love you.",
-      "timestamp": 1561695022812,
-      "title": "Pug love",
-      "id": 3
-    },
-    {
-      "imageURL": "https://media.giphy.com/media/xUOxfbuK9qc61NGiaI/giphy.gif",
-      "userId": 8,
-      "description": "Pug plays music all day long.",
-      "timestamp": 1561695026756,
-      "title": "Piano Pug",
-      "id": 4
     },
     {
       "imageURL": "https://media.giphy.com/media/dTJd5ygpxkzWo/giphy.gif",
       "userId": 2,
       "description": "Pug getting belly rubs.",
-      "timestamp": 1561695026756,
+      "timestamp": 1489166672000,
       "title": "Belly Pug",
       "id": 5
+    },
+    {
+      "title": "Wet Pug",
+      "imageURL": "https://media.giphy.com/media/2xPJm26Rf1EMBTykwG/giphy.gif",
+      "description": "Bath time for baby pug",
+      "userId": 1,
+      "timestamp": 1616515625830,
+      "id": 6
+    },
+    {
+      "title": "Balance Pug",
+      "imageURL": "https://media.giphy.com/media/vbnbQsMr3Gbm/giphy.gif",
+      "description": "Handstand Pug",
+      "userId": 1,
+      "timestamp": 1616515666124,
+      "id": 7
     }
   ],
   "messages": []

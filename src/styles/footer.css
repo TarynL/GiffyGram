@@ -5,12 +5,13 @@
     border-bottom: 1px solid lightblue;
     padding: 0.5em 0 0.5em 1em;
     margin-bottom: 2em;
-    /* position: fixed; */
+    position: fixed;
     z-index: 11;
     bottom: 0;
     width: 100%;
     background-color: whitesmoke;
     margin: auto;
+    margin-top: 1em;
 }
 
 .footer__item {
