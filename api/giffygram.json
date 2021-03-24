@@ -9,6 +9,11 @@
       "name": "Gus",
       "email": "gus@pugparty.edu",
       "id": 2
+    },
+    {
+      "name": "Earl",
+      "email": "earl@pugboy.net",
+      "id": 3
     }
   ],
   "posts": [
