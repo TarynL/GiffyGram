@@ -23,6 +23,11 @@ export const PostEntry = () => {
 
         <button id="newPost__submit">Save</button>
         <button id="newPost__cancel">Cancel</button>
+        <hr>
+        <div class="postButtons">
+        <button id="filter">Show My Posts</button>
+        <button id="allPosts">Show All Posts</button>
+        </div>
     </div>
     `
 }
