@@ -1,3 +1,5 @@
+
+// Fetch for user data 
 export const getUsers = () => {
 
   return fetch("http://localhost:8088/users")
@@ -5,8 +7,11 @@ export const getUsers = () => {
 
 }
 
+
+
 let postCollection = [];
 
+// make copy of post 
 export const usePostCollection = () => {
   //Best practice: we don't want to alter the original state, so
   //make a copy of it and then return it
@@ -15,6 +20,7 @@ export const usePostCollection = () => {
   return [...postCollection];
 }
 
+// fetch for post data with expand user
 export const getPosts = () => {
   const userId = getLoggedInUser().id
   return fetch(`http://localhost:8088/posts?_expand=user`)
@@ -27,6 +33,7 @@ export const getPosts = () => {
     })
 }
 
+// fetch for post data with userId and expand user 
 export const getUsersPosts = () => {
   const userId = getLoggedInUser().id
   return fetch(`http://localhost:8088/posts?userId=${userId}&_expand=user`)
@@ -39,7 +46,7 @@ export const getUsersPosts = () => {
     })
 }
 
-
+// fetch for creating post 
 export const createPost = postObj => {
   return fetch("http://localhost:8088/posts", {
     method: "POST",
@@ -53,10 +60,7 @@ export const createPost = postObj => {
 }
 
 
-
-
-
-
+// fetch for delete post 
 export const deletePost = postId => {
   return fetch(`http://localhost:8088/posts/${postId}`, {
     method: "DELETE",
@@ -69,12 +73,13 @@ export const deletePost = postId => {
     .then(getPosts)
 }
 
-
+// fetch for single post 
 export const getSinglePost = (postId) => {
   return fetch(`http://localhost:8088/posts/${postId}`)
     .then(response => response.json())
 }
 
+// fetch for updating post 
 export const updatePost = postObj => {
   return fetch(`http://localhost:8088/posts/${postObj.id}`, {
     method: "PUT",
@@ -88,8 +93,8 @@ export const updatePost = postObj => {
     .then(getPosts)
 }
 
+// Logged In/Out users arrays
 let loggedInUser = {}
-
 
 export const getLoggedInUser = () => {
   return { ...loggedInUser };
@@ -103,6 +108,7 @@ export const setLoggedInUser = (userObj) => {
   loggedInUser = userObj;
 }
 
+// fetch login user data 
 export const loginUser = (userObj) => {
   return fetch(`http://localhost:8088/users?name=${userObj.name}&email=${userObj.email}`)
     .then(response => response.json())
@@ -119,6 +125,7 @@ export const loginUser = (userObj) => {
     })
 }
 
+// fetch new user data 
 export const registerUser = (userObj) => {
   return fetch(`http://localhost:8088/users`, {
     method: "POST",
@@ -134,6 +141,8 @@ export const registerUser = (userObj) => {
     })
 }
 
+
+// fetch users post data 
 export const userPost = postObj => {
   return fetch("http://localhost:8088/posts?_", {
     method: "POST",
