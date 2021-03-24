@@ -1,5 +1,5 @@
 import { Post } from "./Post.js";
-// import { pugHug } from "./Post.js";
+
 
 export const PostList = (allPosts) => {
 	let postHTML = "";
@@ -12,8 +12,4 @@ export const PostList = (allPosts) => {
 
 }
 
-// export const pugHugList = () => {
-// 	const pugElement = document.querySelector(".details")
-// 	pugElement.innerHTML = pugHug()
-// }
 

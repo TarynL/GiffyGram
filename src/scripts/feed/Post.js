@@ -10,13 +10,13 @@ export const Post = (postObject) => {
             <h2 class="post__title">${postObject.title}</h2>
         </header>
         <img class="post__image" src="${postObject.imageURL}" alt="${postObject.description}"/>
-        <h6 class="details"></h6>
+        <h6 class="details__${postObject.id}"></h6>
         <h4 class="userName">Posted by ${postObject.user.name}</h4>
-        <h3 class="post_description"
+        
 
         <div><button id="delete__${postObject.id}">Delete</button></div>
         <button id="edit__${postObject.id}">Edit</button>
-        <div><button id="Pug Hug--${postObject.id}">Pug Hug Here</button></div>
+        <div><button id="Pug Hug__${postObject.id}">Pug Hug Here</button></div>
         
       </section>
     `
@@ -28,18 +28,26 @@ export const Post = (postObject) => {
             <h2 class="post__title">${postObject.title}</h2>
         </header>
         <img class="post__image" src="${postObject.imageURL}" alt="${postObject.description}"/>
+        <h6 class="details__${postObject.id}"></h6>
         <h4 class="userName">Posted by ${postObject.user.name}</h4>
-        <h3 class="post_description"
-        <div><button type ="hidden" id="Pug Hug--${postObject.id}">Pug Hug Here</button></div>  
+        
+        <div><button type ="hidden" id="Pug Hug__${postObject.id}">Pug Hug Here</button></div>  
       </section>
     `
   }
 }
 
-// export const pugHug = (postObject) => {
-//   return `
+const pugHug = (postObj) => {
+  console.log(postObj);
+  return `
     
-//       <h6>${postObject.description}</h6>
+      <h6 class="details__${postObj.id}">${postObj.description}</h6>
       
-//     `
-// }
+    `
+}
+
+export const pugHugDeets = (post) => {
+  console.log(post)
+  const pugElement = document.querySelector(`.details__${post.id}`)
+  pugElement.innerHTML = pugHug(post);
+}

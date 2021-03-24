@@ -5,36 +5,25 @@ import {
 } from "./data/DataManager.js"
 
 import { PostList } from "./feed/PostList.js"
-// import {  pugHugList } from "./feed/PostList.js"
+import {  pugHugDeets } from "./feed/Post.js"
 import { NavBar } from "./Nav/NavBar.js"
 import { Footer } from "./Nav/Footer.js"
 import { PostEntry } from "./feed/PostEntry.js"
 import { PostEdit } from "./feed/PostEdit.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { LoginForm } from "./auth/LoginForm.js"
-/**
- * Main logic module for what should happen on initial page load for Giffygram
- */
-
-//Get a reference to the location on the DOM where the app will display
-// const postElement = document.querySelector(".postList");
-// const navElement = document.querySelector("nav");
-// const entryElement = document.querySelector(".entryForm")
 
 
+// Post function to reference dom where post will display 
 const showPostList = () => {
   const postElement = document.querySelector(".postList");
   getPosts().then((allPosts) => {
     postElement.innerHTML = PostList(allPosts);
   })
 }
-// const showPugHugList = () => {
-//   const postElement = document.querySelector(".postList");
-//   getPosts().then((allPosts) => {
-//     postElement.innerHTML = pugHugList(allPosts);
-//   })
-// }
 
+
+// Users function to reference dom where they will display 
 const showUsersPosts = () => {
   const postElement = document.querySelector(".postList");
   getUsersPosts().then((allPosts) => {
@@ -42,25 +31,30 @@ const showUsersPosts = () => {
   })
 }
 
+
+// Nav function to reference dom where nav will display 
 const showNavBar = () => {
   //Get a reference to the location on the DOM where the nav will display
   const navElement = document.querySelector("nav");
   navElement.innerHTML = NavBar();
 }
 
+
+// Footer function to reference dom where footer will display 
 const showFooter = () => {
   const footerElement = document.querySelector("footer");
   footerElement.innerHTML = Footer();
 }
 
+
+//Entry function to reference dom where entries will display
 const showPostEntry = () => {
-  //Get a reference to the location on the DOM where the nav will display
   const entryElement = document.querySelector(".entryForm");
   entryElement.innerHTML = PostEntry();
 }
 
 
-
+// login function 
 const checkForUser = () => {
   if (sessionStorage.getItem("user")) {
     //this is expecting an object. Need to fix
@@ -72,7 +66,7 @@ const checkForUser = () => {
     showLoginRegister();
   }
 }
-
+// register user function 
 const showLoginRegister = () => {
   showNavBar();
   const entryElement = document.querySelector(".entryForm");
@@ -83,27 +77,20 @@ const showLoginRegister = () => {
   postElement.innerHTML = "";
 }
 
-/*
-    This function performs one, specific task.
 
-    1. Can you explain what that task is?
-    2. Are you defining the function here or invoking it?
-*/
 const startGiffyGram = () => {
 
   showPostList();
   showNavBar();
   showFooter();
   showPostEntry();
+}
 
-
-};
-// Are you defining the function here or invoking it?
-// startGiffyGram();
 checkForUser();
 
 const applicationElement = document.querySelector(".giffygram");
 
+// logout user 
 applicationElement.addEventListener("click", event => {
   if (event.target.id === "logout") {
     logoutUser();
@@ -113,6 +100,8 @@ applicationElement.addEventListener("click", event => {
   }
 })
 
+
+// login user 
 applicationElement.addEventListener("click", event => {
   event.preventDefault();
   if (event.target.id === "login__submit") {
@@ -135,6 +124,8 @@ applicationElement.addEventListener("click", event => {
   }
 })
 
+
+// register new user 
 applicationElement.addEventListener("click", event => {
   event.preventDefault();
   if (event.target.id === "register__submit") {
@@ -152,7 +143,7 @@ applicationElement.addEventListener("click", event => {
 })
 
 
-
+// filter post by date 
 applicationElement.addEventListener("change", event => {
   if (event.target.id === "yearSelection") {
     const yearAsNumber = parseInt(event.target.value)
@@ -163,6 +154,8 @@ applicationElement.addEventListener("change", event => {
   }
 })
 
+
+// Filter post by date 
 const showFilteredPosts = (year) => {
   //get a copy of the post collection
   const epoch = Date.parse(`01/01/${year}`);
@@ -173,20 +166,19 @@ const showFilteredPosts = (year) => {
     }
   })
 
-
-
   const postElement = document.querySelector(".postList");
   postElement.innerHTML = PostList(filteredData);
 }
 
-
+// Cancel Post 
 applicationElement.addEventListener("click", event => {
   if (event.target.id === "newPost__cancel") {
-    
+    showPostEntry();
     //clear the input fields
   }
 })
 
+// Submit Post 
 applicationElement.addEventListener("click", event => {
   event.preventDefault();
   if (event.target.id === "newPost__submit") {
@@ -213,6 +205,7 @@ showPostEntry();
 
 })
 
+// delete button 
 applicationElement.addEventListener("click", event => {
   event.preventDefault();
   if (event.target.id.startsWith("delete")) {
@@ -224,12 +217,14 @@ applicationElement.addEventListener("click", event => {
       })
   }
 })
+
 // add an eventListener to handle when the edit button is clicked.
 //  We can use the string method startsWith to target the id of the edit button.
 
 // We can get the id of the item using the string method split 
 // which splits a string into an array of substrings, and returns the new array.
 
+// Edit button 
 applicationElement.addEventListener("click", event => {
   event.preventDefault();
   if (event.target.id.startsWith("edit")) {
@@ -241,6 +236,13 @@ applicationElement.addEventListener("click", event => {
   }
 })
 
+// Once the post is returned, we can invoke a function to display a single post.
+const showEdit = (postObj) => {
+  const entryElement = document.querySelector(".entryForm");
+  entryElement.innerHTML = PostEdit(postObj);
+}
+
+// Filter posts by Users 
 applicationElement.addEventListener("click", event => {
   event.preventDefault();
   if (event.target.id.startsWith("filter")) {
@@ -251,6 +253,8 @@ applicationElement.addEventListener("click", event => {
   }
 })
 
+
+// See all posts event listener 
 applicationElement.addEventListener("click", event => {
   event.preventDefault();
   if (event.target.id.startsWith("allPosts")) {
@@ -261,31 +265,8 @@ applicationElement.addEventListener("click", event => {
   }
 })
 
-// applicationElement.addEventListener("click", event => {
-//   event.preventDefault();
-//   if (event.target.id.startsWith("Pug Hug")) {
-//     const postId = event.target.id.split("__")[1];
-//     getPosts(postId)
-// console.log(postId);
-//       .then(response => {
-//         showPugHugList(response);
-//       })
-//   }
-// })
 
-
-
-
-// Once the post is returned, we can invoke a function to display a single post.
-const showEdit = (postObj) => {
-  const entryElement = document.querySelector(".entryForm");
-  entryElement.innerHTML = PostEdit(postObj);
-}
-
-
-// Add the eventListener for when the update button is clicked.
-//  This combines MANY of the concepts we have covered.
-
+// Update Button 
 applicationElement.addEventListener("click", event => {
   event.preventDefault();
   if (event.target.id.startsWith("updatePost")) {
@@ -315,7 +296,19 @@ applicationElement.addEventListener("click", event => {
 
 })
 
-
-
+applicationElement.addEventListener("click", event => {
+  event.preventDefault();
+  if (event.target.id.startsWith("Pug Hug")) {
+   
+    const postId = event.target.id.split("__")[1];
+    console.log(event.target.id)
+    getSinglePost(postId)
+    
+      .then(response => {
+        pugHugDeets(response);
+      })
+  }
+}
+)
 
 
