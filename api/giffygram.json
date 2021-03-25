@@ -40,7 +40,79 @@
       "userId": 1,
       "timestamp": 1616515666124,
       "id": 7
+    },
+    {
+      "title": "Wet Pug",
+      "imageURL": "https://media.giphy.com/media/2xPJm26Rf1EMBTykwG/giphy.gif",
+      "description": "Baby pug gets bath",
+      "userId": 2,
+      "timestamp": 1616697154157,
+      "id": 8
+    },
+    {
+      "title": "Pug Tongue",
+      "imageURL": "https://media.giphy.com/media/1DqOFqULOqe5y/giphy.gif",
+      "description": "My tongue is too long to fit in my mouth",
+      "userId": 3,
+      "timestamp": 1616697453532,
+      "id": 9
     }
   ],
-  "messages": []
+  "userLikes": [
+    {
+      "postId": 7,
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "postId": 2,
+      "userId": 2,
+      "id": 2
+    },
+    {
+      "postId": 2,
+      "userId": 2,
+      "id": 3
+    },
+    {
+      "postId": 2,
+      "userId": 2,
+      "id": 4
+    },
+    {
+      "postId": 8,
+      "userId": 3,
+      "id": 5
+    },
+    {
+      "postId": 8,
+      "userId": 3,
+      "id": 6
+    },
+    {
+      "postId": 5,
+      "userId": 3,
+      "id": 7
+    },
+    {
+      "postId": 7,
+      "userId": 3,
+      "id": 8
+    },
+    {
+      "postId": 7,
+      "userId": 3,
+      "id": 9
+    },
+    {
+      "postId": 7,
+      "userId": 3,
+      "id": 10
+    },
+    {
+      "postId": 9,
+      "userId": 3,
+      "id": 11
+    }
+  ]
 }

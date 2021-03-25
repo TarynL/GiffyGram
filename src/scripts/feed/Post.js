@@ -1,4 +1,11 @@
-import { getLoggedInUser } from "../data/DataManager.js"
+import { getLoggedInUser, getLikes } from "../data/DataManager.js"
+
+export const getNumberOfLikes = (postId) => {
+  getLikes(postId)
+  .then(response => {
+    document.querySelector(`#likes__${postId}`).innerHTML = `👍 ${response.length}`;
+  })
+}
 
 export const Post = (postObject) => {
   let loggedInUser = getLoggedInUser();
@@ -12,11 +19,14 @@ export const Post = (postObject) => {
         <img class="post__image" src="${postObject.imageURL}" alt="${postObject.description}"/>
         <h6 class="details__${postObject.id}"></h6>
         <h4 class="userName">Posted by ${postObject.user.name}</h4>
+      
         
-
-        <div><button id="delete__${postObject.id}">Delete</button></div>
-        <button id="edit__${postObject.id}">Edit</button>
-        <div><button id="Pug Hug__${postObject.id}">Pug Hug Here</button></div>
+        <div class ="buttons">
+        <div id="likes__${postObject.id}">👍 ${getNumberOfLikes(postObject.id)}</div>
+        <button class="buttons" id="like__${postObject.id}">Like</button>
+        <div><button class="buttons" id="delete__${postObject.id}">Delete</button></div>
+        <button class="buttons" id="edit__${postObject.id}">Edit</button>
+        <button class="buttons" id="pugHug__${postObject.id}">Pug Hug Here</button></div>
         
       </section>
     `
@@ -31,11 +41,17 @@ export const Post = (postObject) => {
         <h6 class="details__${postObject.id}"></h6>
         <h4 class="userName">Posted by ${postObject.user.name}</h4>
         
-        <div><button type ="hidden" id="Pug Hug__${postObject.id}">Pug Hug Here</button></div>  
+        
+        <div class ="buttons">
+        <div id="likes__${postObject.id}">👍 ${getNumberOfLikes(postObject.id)}</div>
+        <button  id="like__${postObject.id}">Like</button>
+        <button  id="pugHug__${postObject.id}">Pug Hug Here</button></div>  
       </section>
     `
   }
 }
+
+
 
 const pugHug = (postObj) => {
   console.log(postObj);

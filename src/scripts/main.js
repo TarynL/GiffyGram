@@ -1,7 +1,7 @@
 import {
   getUsers, setLoggedInUser, logoutUser, loginUser, registerUser,
   getPosts, usePostCollection, getLoggedInUser, createPost, deletePost,
-  updatePost, getSinglePost, getUsersPosts
+  updatePost, getSinglePost, getUsersPosts, postLike
 } from "./data/DataManager.js"
 
 import { PostList } from "./feed/PostList.js"
@@ -296,9 +296,10 @@ applicationElement.addEventListener("click", event => {
 
 })
 
+// Details button
 applicationElement.addEventListener("click", event => {
   event.preventDefault();
-  if (event.target.id.startsWith("Pug Hug")) {
+  if (event.target.id.startsWith("pugHug")) {
    
     const postId = event.target.id.split("__")[1];
     console.log(event.target.id)
@@ -311,4 +312,19 @@ applicationElement.addEventListener("click", event => {
 }
 )
 
+// Like button
+applicationElement.addEventListener("click", event => {
+	event.preventDefault();
+	if (event.target.id.startsWith("like")) {
+	  const likeObject = {
+		 postId: parseInt(event.target.id.split("__")[1]),
+		 userId: getLoggedInUser().id
+	  }
+	  postLike(likeObject)
+		.then(response => {
+		  showPostList();
+		})
+	}
+  })
 
+  
