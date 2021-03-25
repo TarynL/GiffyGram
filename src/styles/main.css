@@ -53,6 +53,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .postButtons{
     margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     
 }
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-height: 30px;
+} 
 

@@ -27,6 +27,7 @@ export const PostEntry = () => {
         <div class="postButtons">
         <button id="filter">Show My Posts</button>
         <button id="allPosts">Show All Posts</button>
+        <button id="mostLikes">Filter by Most Liked</button>
         </div>
     </div>
     `
